@@ -12,7 +12,7 @@
         <div class="col-md-4">
             <div class="card shadow-lg">
                 <div class="card-body">
-                    <p class="h3 dispaly-3">9</p>
+                    <p class="h3 dispaly-3">{{ count }}</p>
                     <button class="btn btn-success m-1">Increment</button>
                     <button class="btn btn-warning m-1">Decrement</button>
                     <button class="btn btn-danger m-1">Increment By</button>
@@ -25,7 +25,22 @@
 <script>
 export default {
     name: "CounterVue",
-    
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    methods: {
+        clickIncrement: () => {
+            this.count += 1;
+        },
+        clickDecrement: () => {
+            this.count -= 1;
+        },
+        clickIncrementBy: (value) => {
+            this.count += value;
+        }
+    }
 }
 </script>
 <style></style>
