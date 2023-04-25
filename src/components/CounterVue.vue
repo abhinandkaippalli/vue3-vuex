@@ -13,9 +13,9 @@
             <div class="card shadow-lg">
                 <div class="card-body">
                     <p class="h3 dispaly-3">{{ count }}</p>
-                    <button class="btn btn-success m-1">Increment</button>
-                    <button class="btn btn-warning m-1">Decrement</button>
-                    <button class="btn btn-danger m-1">Increment By</button>
+                    <button @click="clickIncrement()" class="btn btn-success m-1">Increment</button>
+                    <button @click="clickDecrement()" class="btn btn-warning m-1">Decrement</button>
+                    <button @click="clickIncrementBy()" class="btn btn-danger m-1">Increment By</button>
                 </div>
             </div>
         </div>
@@ -31,14 +31,14 @@ export default {
         }
     },
     methods: {
-        clickIncrement: () => {
-            this.count += 1;
+        clickIncrement: function() {
+            this.count = this.count+1;
         },
-        clickDecrement: () => {
-            this.count -= 1;
+        clickDecrement: function(){
+            this.count = this.count-1;
         },
-        clickIncrementBy: (value) => {
-            this.count += value;
+        clickIncrementBy: function(value){
+            this.count = this.count + value;
         }
     }
 }
