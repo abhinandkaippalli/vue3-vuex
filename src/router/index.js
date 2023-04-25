@@ -22,7 +22,7 @@ const routes = [
     component: EmployeeVue
   },
   {
-    path: '/userlist',
+    path: '/userList',
     name: 'userlist',
     component: UserList
   },  
