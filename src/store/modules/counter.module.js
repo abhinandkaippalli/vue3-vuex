@@ -21,7 +21,7 @@ export default {
             return commit("INCR_COUNTER");
         },
         decrementCounter: function ({commit}) {
-            return commit("DCR_COUNTER");
+            return commit("DECR_COUNTER");
         },
         incrementCounterBy: function({commit}, payload) {
             return commit("INCR_COUNTER_BY", payload)
