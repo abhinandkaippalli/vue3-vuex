@@ -15,7 +15,7 @@
                     <p class="h3 dispaly-3">{{ count }}</p>
                     <button @click="clickIncrement()" class="btn btn-success m-1">Increment</button>
                     <button @click="clickDecrement()" class="btn btn-warning m-1">Decrement</button>
-                    <button @click="clickIncrementBy()" class="btn btn-danger m-1">Increment By</button>
+                    <button @click="clickIncrementBy(5)" class="btn btn-danger m-1">Increment By</button>
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
 </div>
 </template>
 <script>
-export default {
+export default { 
     name: "CounterVue",
     data: function () {
         return {
