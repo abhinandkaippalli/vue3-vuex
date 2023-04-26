@@ -16,5 +16,15 @@ export default {
             state.counter.count += payload.value;
         }
     },
-    actions: {}
+    actions: {
+        incrementCounter : function ({commit}) {
+            return commit("INCR_COUNTER");
+        },
+        decrementCounter: function ({commit}) {
+            return commit("DCR_COUNTER");
+        },
+        incrementCounterBy: function({commit}, payload) {
+            return commit("INCR_COUNTER_BY", payload)
+        }
+    }
 }
