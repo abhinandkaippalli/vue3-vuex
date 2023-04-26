@@ -10,10 +10,17 @@
         </div>
     </div>
 
+    <pre>{{ employees }}</pre>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-
+                <ul class="list-group">
+                    <li v-for="employee of employees" :key="employee.id" class="list-group-item list-group-item-success">
+                        <input @change="updateSelected(employee.id)" type="checkbox" class="form-check-input">
+                        {{ employee.name }}
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -61,7 +68,17 @@ export default {
                 }
 
             ]
-
+        }
+    },
+    methods: {
+        updateSelected: function(empId) {
+            this.employees = this.employees.map(employee => {
+                if(employee.id === empId) {
+                    return {
+                        ...employee, isSelected : !employee.isSelected
+                     }
+                } else return employee;
+            })
         }
     }
 }
