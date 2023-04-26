@@ -6,6 +6,9 @@ export default createStore({
     counterState : counterModule.state
   },
   getters: {
+    getCounterState: function(state) {
+      return state.counterState.counter;
+    }
   },
   mutations: {
   },
