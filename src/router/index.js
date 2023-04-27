@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue';
 import VuexCounterVue from '../components/vuex/VuexCounterVue'
-import EmployeeVue from '@/components/EmployeeVue';
+import VuexEmployeeVue from '@/components/vuex/VuexEmployeeVue';
 import UserList from '@/components/UserList'
 
 
@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/employees',
     name: 'emplyees',
-    component: EmployeeVue
+    component: VuexEmployeeVue
   },
   {
     path: '/userList',

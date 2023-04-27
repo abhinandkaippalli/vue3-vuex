@@ -10,8 +10,6 @@
         </div>
     </div>
 
-    <pre>{{ employees }}</pre>
-
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -21,6 +19,19 @@
                         {{ employee.name }}
                     </li>
                 </ul>
+            </div>
+            <div class="col-md-6">
+                <div v-for="employee of employees" :key="employee.id">
+                    <div class="card my-2" v-if="employee.isSelected">
+                        <div class="card-body list-group-item-success">
+                            <ul class="list-group">
+                                <li class="list-group-item">Id : <span class="fw-bold">{{ employee.id }}</span></li>
+                                <li class="list-group-item">Name : <span class="fw-bold">{{ employee.name }}</span></li>
+                                <li class="list-group-item">Email : <span class="fw-bold">{{ employee.email }}</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -71,12 +82,12 @@ export default {
         }
     },
     methods: {
-        updateSelected: function(empId) {
+        updateSelected: function (empId) {
             this.employees = this.employees.map(employee => {
-                if(employee.id === empId) {
+                if (employee.id === empId) {
                     return {
-                        ...employee, isSelected : !employee.isSelected
-                     }
+                        ...employee, isSelected: !employee.isSelected
+                    }
                 } else return employee;
             })
         }
