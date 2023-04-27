@@ -1,11 +1,13 @@
 import { createStore } from 'vuex'
 import counterModule from './modules/counter.module'
 import employeeModule from './modules/employee.module';
+import userssModule from './modules/userss.module';
 
 export default createStore({
   state: {
     counterState : counterModule.state,
-    employeeState : employeeModule.state
+    employeeState : employeeModule.state,
+    usersState : userssModule.state
   },
   getters: {
     getCounterState: function(state) {
@@ -21,6 +23,7 @@ export default createStore({
   },
   modules: {
     counterModule,
-    employeeModule 
+    employeeModule ,
+    userssModule
   }
 })
